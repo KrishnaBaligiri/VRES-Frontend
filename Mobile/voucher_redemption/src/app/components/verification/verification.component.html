@@ -1,0 +1,60 @@
+<div class="tab-verification">
+  <div>
+    <!-- Back Button aligned left -->
+    <div class="back-div">
+      <ion-button fill="clear" (click)="backtoLogin()">
+        <img src="../../../assets/leftarrow.png" />Back
+      </ion-button>
+    </div>
+
+    <!-- Smaller Logo -->
+    <div class="mobile-img">
+      <ion-img class="voucher-logo" src="../../../assets/vocher_redemption.png"></ion-img>
+    </div>
+
+    <!-- Error Messages -->
+    <div *ngIf="showOTPError" class="error-message">
+      Please enter a 6-digit OTP.
+    </div>
+    <div *ngIf="errorInvalid" class="error-message">
+      OTP is invalid. Please try again.
+    </div>
+    
+
+    <!-- OTP Boxes -->
+    <div class="otp-wrapper">
+      <ion-input type="number" maxlength="1" (input)="numericOnly($event)" class="otp" #otp1
+        onKeyPress="if(this.value.length==1) return false;" [(ngModel)]="otpValues.val1" (keyup)="otpController($event,otp2,'')">
+      </ion-input>
+
+      <ion-input type="number" maxlength="1" (input)="numericOnly($event)" class="otp" #otp2
+       onKeyPress="if(this.value.length==1) return false;" [(ngModel)]="otpValues.val2" (keyup)="otpController($event,otp3,otp1)">
+      </ion-input>
+
+      <ion-input type="number" maxlength="1" (input)="numericOnly($event)" class="otp" #otp3
+       onKeyPress="if(this.value.length==1) return false;" [(ngModel)]="otpValues.val3" (keyup)="otpController($event,otp4,otp2)">
+      </ion-input>
+
+      <ion-input type="number" maxlength="1" (input)="numericOnly($event)" class="otp" #otp4
+       onKeyPress="if(this.value.length==1) return false;" [(ngModel)]="otpValues.val4" (keyup)="otpController($event,otp5,otp3)">
+      </ion-input>
+
+      <ion-input type="number" maxlength="1" (input)="numericOnly($event)" class="otp" #otp5
+       onKeyPress="if(this.value.length==1) return false;" [(ngModel)]="otpValues.val5" (keyup)="otpController($event,otp6,otp4)">
+      </ion-input>
+
+      <ion-input type="number" maxlength="1" (input)="numericOnly($event)" class="otp" #otp6
+       onKeyPress="if(this.value.length==1) return false;" [(ngModel)]="otpValues.val6" (keyup)="otpController($event,'',otp5)">
+      </ion-input>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="button-container">
+    <div class="password-view border-radius signin_btn">
+      <ion-button expand="block" style="color: white" fill="clear" class="signin-font" (click)="submit()">
+        Submit
+      </ion-button>
+    </div>
+  </div>
+</div>

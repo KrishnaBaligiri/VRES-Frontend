@@ -1,0 +1,93 @@
+.tab-form {
+  max-width: 450px !important;
+  display: block;
+  margin: auto;
+}
+
+.size {
+  width: 110px;
+  height: 110px;
+}
+
+.bg-image {
+  justify-content: center;
+  display: flex;
+  margin-top: 60px;
+}
+
+.forgot-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.signup_btn_clr {
+  color: #872245;
+}
+
+.password-view {
+  width: 86%;
+  margin: 2% 7% 3% 7%;
+  border: 1px solid #C7C7C7;
+}
+
+.right {
+  float: right;
+  text-align: right;
+  font-size: 10px;
+}
+
+.label-view {
+  width: 86%;
+  margin: 2% 7% 3% 7%;
+}
+
+.bi-email {
+  background-image: url(../../assets/email_icon.png);
+  border: 0px;
+  background-repeat: no-repeat;
+  width: 23px;
+  height: 20px;
+}
+
+.bi-password {
+  background-image: url(../../assets/password_icon.png);
+  border: 0px;
+  background-repeat: no-repeat;
+  width: 23px;
+  height: 24px;
+  left: 10px;
+}
+
+.signin_btn {
+  background-color: #872245;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-family: 'Barlow Condensed', Roboto !important;
+}
+
+.version {
+  text-align: center;
+  display: block;
+  font-family: 'Barlow Condensed', Roboto !important;
+}
+.forgot-password-link {
+  text-align: right;
+  margin-top: 8px;
+
+  ion-button {
+    --color: #003e82;
+    font-size: 14px;
+    text-transform: none;
+  }
+}

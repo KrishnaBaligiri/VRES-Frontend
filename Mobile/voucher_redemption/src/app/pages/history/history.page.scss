@@ -1,0 +1,26 @@
+.history-content {
+  --background: #f6f9ff;
+}
+
+.ticket-icon {
+  font-size: 28px;
+  color: #124bcd;
+}
+
+.empty {
+  text-align: center;
+  color: var(--ion-color-medium);
+  margin-top: 20vh;
+
+  ion-icon {
+    font-size: 64px;
+    display: block;
+    margin-bottom: 12px;
+    color: #124bcd;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

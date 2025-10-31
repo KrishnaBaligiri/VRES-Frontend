@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="align-items: center;">Voucher Redemption System</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Show Signin Component -->
+  <app-signin
+    *ngIf="card === 'loginCard'"
+    (getCardStatus)="cardStatus($event)"
+  ></app-signin>
+
+  <!-- Show Verification Component -->
+  <app-verification
+    *ngIf="card === 'verificationCard'"
+    (getCardStatus)="cardStatus($event)"
+  ></app-verification>
+
+  <!-- Forgot Password Link -->
+  <!-- <div class="forgot-password-link" *ngIf="card === '  ginCard'">
+    <ion-button fill="clear" color="primary" (click)="goToForgotPassword()">
+      Forgot Password?
+    </ion-button>
+  </div> -->
+</ion-content>

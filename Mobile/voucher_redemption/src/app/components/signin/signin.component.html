@@ -1,0 +1,59 @@
+<div class="login-container">
+  <!-- Logo Section -->
+  <div class="logo-section">
+    <ion-img class="logo-img" src="../../../assets/vocher_redemption.png"></ion-img>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <form [formGroup]="signinForm" (ngSubmit)="onLogin()">
+      <!-- Username -->
+      <div class="form-group">
+        <label class="field-label">
+          <ion-icon name="person-outline" class="input-icon"></ion-icon>
+          User Name
+        </label>
+        <ion-input
+          formControlName="userId"
+          type="text" style="--padding-left: 20px;"
+          placeholder="Enter your username"
+          class="input-box"
+        ></ion-input>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label class="field-label">
+          <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+          Password
+        </label>
+        <div class="password-container">
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password" style="--padding-left: 20px;"
+            placeholder="Enter your password"
+            class="input-box"
+          ></ion-input>
+          <ion-icon
+            slot="end"
+            [name]="showPassword ? 'eye-off' : 'eye'"
+            class="toggle-icon"
+            (click)="togglePassword()"
+          ></ion-icon>
+        </div>
+      </div>
+
+      <!-- Login Button -->
+      <ion-button expand="block" type="submit" class="login-btn" [disabled]="signinForm.invalid">
+        Login
+      </ion-button>
+
+      <!-- Forgot Password -->
+      <div class="forgot-container">
+        <ion-button fill="clear" size="small" class="forgot-btn" (click)="forgotPassword()">
+          Forgot Password?
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</div>

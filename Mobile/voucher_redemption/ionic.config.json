@@ -1,0 +1,7 @@
+{
+  "name": "voucher_redemption",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

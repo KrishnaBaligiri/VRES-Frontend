@@ -1,0 +1,149 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+ion-content {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+ion-toolbar {
+  --background: white;
+  color: black;
+  --padding-top: 5px;
+  ion-icon {
+    color: black;
+  }
+}
+
+.border-radius {
+  border-radius: 2.375rem;
+}
+
+.placeholder {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.input-div {
+  margin: 10px;
+  ion-input {
+    border: 1px solid var(--ion-color-medium-shade);
+    border-radius: 5px;
+    margin-top: 4px;
+    padding: 10px 10px;
+    height: 42px;
+    margin-bottom: 5px;
+  }
+
+  ion-select {
+    border: 1px solid var(--ion-color-medium-shade);
+    border-radius: 5px;
+    margin-top: 4px;
+    padding: 10px 10px;
+    height: 42px;
+    margin-bottom: 5px;
+  }
+
+  ion-segment {
+    margin-top: 4px;
+    height: 42px;
+    margin-bottom: 5px;
+  }
+}
+
+ion-select {
+  white-space: normal !important;
+}
+
+ion-label {
+  white-space: normal !important;
+}
+
+body,
+html,
+ion-app,
+ion-content {
+  background-color: white;
+  color: black;
+  /* Set text color to black */
+}
+
+body.qr-scanner-active,
+body.qr-scanner-active ion-app,
+body.qr-scanner-active ion-content,
+body.qr-scanner-active .app-root,
+html {
+  background: transparent !important;
+  --background: transparent !important;
+  --ion-background-color: transparent !important;
+  transition: all 0.3s ease;
+}
+
+.qr-scanner-active ion-header,
+.qr-scanner-active ion-footer {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+body.qr-scanner-active ion-content > * {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body:not(.qr-scanner-active),
+body:not(.qr-scanner-active) ion-app,
+body:not(.qr-scanner-active) ion-content,
+body:not(.qr-scanner-active) .app-root,
+html:not(.qr-scanner-active) {
+  background: #fff ;
+  --background: #fff ;
+  --ion-background-color: #fff ;
+  opacity: 1 ;
+  pointer-events: auto;
+
+}
+
+.qr-scanner-active ion-content > *:not(#scanner-overlay) {
+  opacity: 0 !important; 
+  pointer-events: none !important;
+}
+
+.qr-scanner-active #scanner-overlay {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 9999 !important; 
+}

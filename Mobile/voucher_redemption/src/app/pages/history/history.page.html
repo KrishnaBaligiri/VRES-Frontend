@@ -1,0 +1,35 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Redemption History</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding history-content" fullscreen>
+  <ion-list *ngIf="history.length; else empty">
+    <ion-item *ngFor="let h of history" lines="inset">
+      <ion-avatar slot="start">
+        <ion-icon name="ticket-outline" class="ticket-icon"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ h.code }}</h2>
+        <p>{{ h.method | titlecase }} • {{ h.date | date:'medium' }}</p>
+      </ion-label>
+      <ion-badge [color]="h.status === 'Success' ? 'success' : (h.status === 'Failed' ? 'danger' : 'warning')">
+        {{ h.status }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #empty>
+    <div class="empty">
+      <ion-icon name="receipt-outline"></ion-icon>
+      <p>No vouchers redeemed yet</p>
+    </div>
+  </ng-template>
+</ion-content>
